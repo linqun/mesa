@@ -2831,7 +2831,7 @@ static void si_llvm_emit_streamout(struct si_shader_context *ctx,
 
 		/* Load the descriptor and compute the write offset for each
 		 * enabled buffer. */
-		LLVMValueRef so_write_offset[4] = {};
+		LLVMValueRef so_write_offset[4] = {INIT_ZERO};
 		LLVMValueRef so_buffers[4];
 		LLVMValueRef buf_ptr = LLVMGetParam(ctx->main_fn,
 						    ctx->param_rw_buffers);
@@ -3861,7 +3861,7 @@ static void si_llvm_return_fs_outputs(struct ac_shader_abi *abi,
 	LLVMBuilderRef builder = ctx->ac.builder;
 	unsigned i, j, first_vgpr, vgpr;
 
-	LLVMValueRef color[8][4] = {};
+	LLVMValueRef color[8][4] = {INIT_ZERO};
 	LLVMValueRef depth = NULL, stencil = NULL, samplemask = NULL;
 	LLVMValueRef ret;
 
@@ -4436,7 +4436,7 @@ static void si_llvm_emit_barrier(const struct lp_build_tgsi_action *action,
 	struct si_shader_context *ctx = si_shader_context(bld_base);
 
 	/* SI only (thanks to a hw bug workaround):
-	 * The real barrier instruction isnâ€™t needed, because an entire patch
+	 * The real barrier instruction isn¡¯t needed, because an entire patch
 	 * always fits into a single wave.
 	 */
 	if (ctx->screen->info.chip_class == SI &&
@@ -6819,7 +6819,7 @@ int si_compile_tgsi_shader(struct si_screen *sscreen,
 			parts[3] = ctx.main_fn;
 
 			/* VS as LS main part */
-			struct si_shader shader_ls = {};
+			struct si_shader shader_ls = {INIT_ZERO};
 			shader_ls.selector = ls;
 			shader_ls.key.as_ls = 1;
 			shader_ls.key.mono = shader->key.mono;
@@ -6883,7 +6883,7 @@ int si_compile_tgsi_shader(struct si_screen *sscreen,
 			gs_prolog = ctx.main_fn;
 
 			/* ES main part */
-			struct si_shader shader_es = {};
+			struct si_shader shader_es = {INIT_ZERO};
 			shader_es.selector = es;
 			shader_es.key.as_es = 1;
 			shader_es.key.mono = shader->key.mono;
@@ -7112,7 +7112,7 @@ si_get_shader_part(struct si_screen *sscreen,
 	result = CALLOC_STRUCT(si_shader_part);
 	result->key = *key;
 
-	struct si_shader shader = {};
+	struct si_shader shader = {INIT_ZERO};
 	struct si_shader_context ctx;
 
 	si_init_shader_ctx(&ctx, sscreen, tm);
@@ -8159,11 +8159,13 @@ int si_shader_create(struct si_screen *sscreen, LLVMTargetMachineRef tm,
 		       stderr, true);
 
 	/* Upload. */
+	#ifndef STANDALONE_COMPILER
 	r = si_shader_binary_upload(sscreen, shader);
 	if (r) {
 		fprintf(stderr, "LLVM failed to upload shader\n");
 		return r;
 	}
+	#endif
 
 	return 0;
 }

@@ -43,7 +43,39 @@
 #include "ir_builder_print_visitor.h"
 #include "builtin_functions.h"
 #include "opt_add_neg_to_sub.h"
+#include "state_tracker\st_glsl_to_tgsi.h"
+#include "state_tracker\st_context.h"
+
+#include "pipe\p_context.h"
+#include "pipe\p_screen.h"
+#include "radeon\r600_pipe_common.h"
+extern "C"
+{
+#include "radeonsi\si_public.h"
+}
+#include "radeonsi\si_pipe.h"
+//#include <llvm-c/Core.h>
+//#include <llvm-c/TargetMachine.h>
+//#include "util/hash_table.h"
+
+
+static struct st_context g_st = {0};
+static struct si_context g_p = {0};
+//static struct si_screen g_screen = {};
+static gl_pipeline_object g_dummy_pipeline_object = {0};
+static struct radeon_info g_info = {};
+extern "C"
+{
+struct gl_program *
+st_new_program(struct gl_context *ctx, GLenum target, GLuint id,
+               bool is_arb_asm);
+GLboolean
+st_program_string_notify( struct gl_context *ctx,
+                                           GLenum target,
+                                           struct gl_program *prog );
+void si_init_shader_functions(struct si_context *sctx);
 #include "main/mtypes.h"
+}
 
 class dead_variable_visitor : public ir_hierarchical_visitor {
 public:
@@ -130,6 +162,25 @@ new_program(UNUSED struct gl_context *ctx, GLenum target,
    }
 }
 
+void query_info(struct radeon_winsys *ws,
+                struct radeon_info *info)
+{
+    *info = g_info;
+}
+
+struct radeon_winsys_ctx * ctx_create(struct radeon_winsys *ws)
+{
+   return (struct radeon_winsys_ctx *)4;
+}
+struct radeon_winsys_cs * cs_create (struct radeon_winsys_ctx *ctx,
+                                          enum ring_type ring_type,
+                                          void (*flush)(void *ctx, unsigned flags,
+							struct pipe_fence_handle **fence),
+                                          void *flush_ctx)
+{
+   return (struct radeon_winsys_cs *)4;
+}
+
 static const struct standalone_options *options;
 
 static void
@@ -163,6 +214,17 @@ initialize_context(struct gl_context *ctx, gl_api api)
    ctx->Const.Program[MESA_SHADER_COMPUTE].MaxAtomicCounters = 8;
    ctx->Const.Program[MESA_SHADER_COMPUTE].MaxImageUniforms = 8;
    ctx->Const.Program[MESA_SHADER_COMPUTE].MaxUniformBlocks = 12;
+
+   ctx->Const.Program[MESA_SHADER_FRAGMENT].MaxUniformBlocks = 12;
+   ctx->Const.Program[MESA_SHADER_FRAGMENT].MaxUniformBlocks = 12;
+   ctx->Const.Program[MESA_SHADER_VERTEX].MaxUniformBlocks = 12;
+   ctx->Const.MaxUniformBlockSize = 65536;
+   ctx->Const.MaxUniformBufferBindings = 16;
+   ctx->Const.MaxShaderStorageBlockSize = 65536;
+   ctx->Const.MaxShaderStorageBufferBindings = 16;
+   ctx->Const.MaxCombinedShaderStorageBlocks = 16;
+   ctx->Const.Program[MESA_SHADER_FRAGMENT].MaxShaderStorageBlocks = 12;
+   ctx->Const.Program[MESA_SHADER_VERTEX].MaxShaderStorageBlocks = 12;
 
    switch (ctx->Const.GLSLVersion) {
    case 100:
@@ -338,7 +400,29 @@ initialize_context(struct gl_context *ctx, gl_api api)
    ctx->Const.MaxUserAssignableUniformLocations =
       4 * MESA_SHADER_STAGES * MAX_UNIFORMS;
 
-   ctx->Driver.NewProgram = new_program;
+   //ctx->Driver.NewShader = _mesa_new_linked_shader;
+   ctx->Driver.NewProgram = st_new_program;
+   ctx->Driver.ProgramStringNotify = st_program_string_notify;
+
+   ctx->_Shader = &g_dummy_pipeline_object;
+
+   ctx->st = &g_st;
+   g_st.ctx = ctx;
+   g_st.pipe = &g_p.b.b;
+   si_init_shader_functions(&g_p);
+   uint32_t debug_flags = DBG_FS | DBG_VS | DBG_PS | DBG_TES | DBG_GS | DBG_TCS | DBG_CS| DBG_PRECOMPILE;
+   struct radeon_winsys ws = {0};
+   g_info.chip_class = GFX9;//VI;
+   g_info.family = CHIP_VEGA10;//CHIP_TONGA;
+   ws.query_info = query_info;
+   ws.ctx_create = ctx_create;
+   ws.cs_create = cs_create;
+   si_screen* pscreen = (si_screen*)radeonsi_screen_create(&ws, debug_flags);
+
+   g_p.screen = pscreen;
+   g_p.b.b.screen = (pipe_screen*)pscreen;
+   g_p.tm = pscreen->tm[0];
+
 }
 
 /* Returned string will have 'ctx' as its ralloc owner. */
@@ -592,6 +676,19 @@ standalone_compile_shader(const struct standalone_options *_options,
          }
       }
    }
+
+   st_link_shader(ctx, whole_program);
+
+   for (unsigned i = 0; i < MESA_SHADER_STAGES; i++) {
+      struct gl_linked_shader *shader = whole_program->_LinkedShaders[i];
+
+      if (!shader)
+         continue;
+
+      shader->Program = rzalloc(shader, gl_program);
+      init_gl_program(shader->Program, shader->Stage, false);
+   }
+
 
    return whole_program;
 

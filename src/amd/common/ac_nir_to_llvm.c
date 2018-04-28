@@ -2231,7 +2231,7 @@ static LLVMValueRef visit_image_load(struct ac_nir_context *ctx,
 		res = ac_trim_vector(&ctx->ac, res, instr->dest.ssa.num_components);
 		res = ac_to_integer(&ctx->ac, res);
 	} else {
-		struct ac_image_args args = {};
+		struct ac_image_args args = {INIT_ZERO};
 		args.opcode = ac_image_load;
 		get_image_coords(ctx, instr, &args);
 		args.resource = get_sampler_desc(ctx, instr->variables[0],
@@ -2273,7 +2273,7 @@ static void visit_image_store(struct ac_nir_context *ctx,
 		ac_build_intrinsic(&ctx->ac, "llvm.amdgcn.buffer.store.format.v4f32", ctx->ac.voidt,
 				   params, 6, 0);
 	} else {
-		struct ac_image_args args = {};
+		struct ac_image_args args = {INIT_ZERO};
 		args.opcode = ac_image_store;
 		args.data[0] = ac_to_float(&ctx->ac, get_src(ctx, instr->src[2]));
 		get_image_coords(ctx, instr, &args);
@@ -2361,7 +2361,7 @@ static LLVMValueRef visit_image_atomic(struct ac_nir_context *ctx,
 		return ac_build_intrinsic(&ctx->ac, intrinsic_name, ctx->ac.i32,
 					  params, param_count, 0);
 	} else {
-		struct ac_image_args args = {};
+		struct ac_image_args args = {INIT_ZERO};
 		args.opcode = cmpswap ? ac_image_atomic_cmpswap : ac_image_atomic;
 		args.atomic = atomic_subop;
 		args.data[0] = params[0];
@@ -3756,8 +3756,11 @@ glsl_to_llvm_type(struct ac_llvm_context *ac,
 
 	assert(glsl_type_is_struct(type));
 
+#if STANDALONE_COMPILER
+	LLVMTypeRef member_types[256];
+#else
 	LLVMTypeRef member_types[glsl_get_length(type)];
-
+#endif
 	for (unsigned i = 0; i < glsl_get_length(type); i++) {
 		member_types[i] =
 			glsl_to_llvm_type(ac,
@@ -3809,7 +3812,7 @@ setup_shared(struct ac_nir_context *ctx,
 void ac_nir_translate(struct ac_llvm_context *ac, struct ac_shader_abi *abi,
 		      struct nir_shader *nir)
 {
-	struct ac_nir_context ctx = {};
+	struct ac_nir_context ctx = {INIT_ZERO};
 	struct nir_function *func;
 
 	ctx.ac = *ac;

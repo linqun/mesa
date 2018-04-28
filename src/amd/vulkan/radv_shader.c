@@ -183,8 +183,10 @@ radv_shader_compile_to_nir(struct radv_device *device,
 		uint32_t *spirv = (uint32_t *) module->data;
 		assert(module->size % 4 == 0);
 
+#ifndef STANDALONE_COMPILER
 		if (device->instance->debug_flags & RADV_DEBUG_DUMP_SPIRV)
 			radv_print_spirv(spirv, module->size, stderr);
+#endif
 
 		uint32_t num_spec_entries = 0;
 		struct nir_spirv_specialization *spec_entries = NULL;
@@ -193,8 +195,8 @@ radv_shader_compile_to_nir(struct radv_device *device,
 			spec_entries = malloc(num_spec_entries * sizeof(*spec_entries));
 			for (uint32_t i = 0; i < num_spec_entries; i++) {
 				VkSpecializationMapEntry entry = spec_info->pMapEntries[i];
-				const void *data = spec_info->pData + entry.offset;
-				assert(data + entry.size <= spec_info->pData + spec_info->dataSize);
+				const void *data = (const char*)spec_info->pData + entry.offset;
+				assert((const char*)data + entry.size <= (const char*)spec_info->pData + spec_info->dataSize);
 
 				spec_entries[i].id = spec_info->pMapEntries[i].constantID;
 				if (spec_info->dataSize == 8)
@@ -453,9 +455,10 @@ radv_fill_shader_variant(struct radv_device *device,
 		variant->rsrc1 |= S_00B428_LS_VGPR_COMP_CNT(vgpr_comp_cnt);
 	else
 		variant->rsrc1 |= S_00B128_VGPR_COMP_CNT(vgpr_comp_cnt);
-
+#ifndef STANDALONE_COMPILER
 	void *ptr = radv_alloc_shader_memory(device, variant);
 	memcpy(ptr, binary->code, binary->code_size);
+#endif
 }
 
 static struct radv_shader_variant *
@@ -710,7 +713,7 @@ radv_GetShaderInfoAMD(VkDevice _device,
 			unsigned lds_multiplier = device->physical_device->rad_info.chip_class >= CIK ? 512 : 256;
 			struct ac_shader_config *conf = &variant->config;
 
-			VkShaderStatisticsInfoAMD statistics = {};
+			VkShaderStatisticsInfoAMD statistics = {INIT_ZERO};
 			statistics.shaderStageMask = shaderStage;
 			statistics.numPhysicalVgprs = RADV_NUM_PHYSICAL_VGPRS;
 			statistics.numPhysicalSgprs = radv_get_num_physical_sgprs(device->physical_device);

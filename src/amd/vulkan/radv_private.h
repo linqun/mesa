@@ -205,10 +205,10 @@ radv_clear_mask(uint32_t *inout_mask, uint32_t clear_mask)
 	     (b) = __builtin_ffs(__dword) - 1, __dword;	\
 	     __dword &= ~(1 << (b)))
 
-#define typed_memcpy(dest, src, count) ({				\
+#define typed_memcpy(dest, src, count) {				\
 			STATIC_ASSERT(sizeof(*src) == sizeof(*dest)); \
 			memcpy((dest), (src), (count) * sizeof(*(src))); \
-		})
+		}
 
 /* Whenever we generate an error, pass it through this function. Useful for
  * debugging, where we can break on it. Only call at error site, not when
@@ -702,7 +702,7 @@ struct radv_descriptor_set {
 	uint32_t *mapped_ptr;
 	struct radv_descriptor_range *dynamic_descriptors;
 
-	struct radeon_winsys_bo *descriptors[0];
+	struct radeon_winsys_bo *descriptors[1];
 };
 
 struct radv_push_descriptor_set
@@ -760,7 +760,7 @@ struct radv_descriptor_update_template_entry {
 struct radv_descriptor_update_template {
 	uint32_t entry_count;
 	VkPipelineBindPoint bind_point;
-	struct radv_descriptor_update_template_entry entry[0];
+	struct radv_descriptor_update_template_entry entry[1];
 };
 
 struct radv_buffer {
@@ -1641,7 +1641,7 @@ struct radv_framebuffer {
 	uint32_t                                     layers;
 
 	uint32_t                                     attachment_count;
-	struct radv_attachment_info                  attachments[0];
+	struct radv_attachment_info                  attachments[1];
 };
 
 struct radv_subpass_barrier {
@@ -1683,7 +1683,7 @@ struct radv_render_pass {
 	VkAttachmentReference *                      subpass_attachments;
 	struct radv_render_pass_attachment *         attachments;
 	struct radv_subpass_barrier                  end_barrier;
-	struct radv_subpass                          subpasses[0];
+	struct radv_subpass                          subpasses[1];
 };
 
 VkResult radv_device_init_meta(struct radv_device *device);

@@ -53,7 +53,7 @@
  * Called via ctx->Driver.NewProgram() to allocate a new vertex or
  * fragment program.
  */
-static struct gl_program *
+struct gl_program *
 st_new_program(struct gl_context *ctx, GLenum target, GLuint id,
                bool is_arb_asm)
 {
@@ -154,7 +154,7 @@ st_delete_program(struct gl_context *ctx, struct gl_program *prog)
  * Called when the program's text/code is changed.  We have to free
  * all shader variants and corresponding gallium shaders when this happens.
  */
-static GLboolean
+GLboolean
 st_program_string_notify( struct gl_context *ctx,
                                            GLenum target,
                                            struct gl_program *prog )

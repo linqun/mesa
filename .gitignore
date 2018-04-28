@@ -52,3 +52,6 @@ Makefile.in
 .install-gallium-links
 /src/git_sha1.h
 TAGS
+/src/amd/vulkan/radv_extensions.h
+/src/compiler/nir/nir_intrinsics.h
+/src/compiler/nir/nir_intrinsics.c

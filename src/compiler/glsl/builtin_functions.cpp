@@ -3318,6 +3318,7 @@ builtin_builder::create_builtins()
                 _vote("__intrinsic_vote_eq", v460_desktop),
                 NULL);
 
+#ifndef STANDALONE_COMPILER
    add_function("__builtin_idiv64",
                 generate_ir::idiv64(mem_ctx, integer_functions_supported),
                 NULL);
@@ -3341,7 +3342,7 @@ builtin_builder::create_builtins()
    add_function("__builtin_umul64",
                 generate_ir::umul64(mem_ctx, integer_functions_supported),
                 NULL);
-
+#endif
 #undef F
 #undef FI
 #undef FIUD_VEC

@@ -379,7 +379,7 @@ emit_array_fetch(struct lp_build_tgsi_context *bld_base,
 	LLVMTypeRef vec = LLVMVectorType(tgsi2llvmtype(bld_base, type), size);
 	LLVMValueRef result = LLVMGetUndef(vec);
 
-	struct tgsi_full_src_register tmp_reg = {};
+	struct tgsi_full_src_register tmp_reg = {INIT_ZERO};
 	tmp_reg.Register.File = File;
 
 	for (i = 0; i < size; ++i) {

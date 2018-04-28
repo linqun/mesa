@@ -1826,6 +1826,7 @@ static void si_parse_next_shader_property(const struct tgsi_shader_info *info,
 	}
 }
 
+struct si_shader_selector *g_vpsel = NULL;
 /**
  * Compile the main shader part or the monolithic shader as part of
  * si_shader_selector initialization. Since it can be done asynchronously,

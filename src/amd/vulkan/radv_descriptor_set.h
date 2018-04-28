@@ -72,7 +72,7 @@ struct radv_descriptor_set_layout {
    bool has_variable_descriptors;
 
    /* Bindings in this descriptor set */
-   struct radv_descriptor_set_binding_layout binding[0];
+   struct radv_descriptor_set_binding_layout binding[1];
 };
 
 struct radv_pipeline_layout {

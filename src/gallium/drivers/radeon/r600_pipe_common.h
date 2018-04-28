@@ -271,7 +271,7 @@ union si_mmio_counters {
 		struct si_mmio_counter cp_dma;
 		struct si_mmio_counter scratch_ram;
 	} named;
-	unsigned array[0];
+	unsigned array[1];
 };
 
 struct r600_memory_object {
@@ -327,4 +327,3 @@ vi_dcc_enabled(struct r600_texture *tex, unsigned level)
 	return tex->dcc_offset && level < tex->surface.num_dcc_levels;
 }
 
-#endif

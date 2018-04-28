@@ -162,7 +162,7 @@ union si_state {
 		struct si_pm4_state		*vs;
 		struct si_pm4_state		*ps;
 	} named;
-	struct si_pm4_state	*array[0];
+	struct si_pm4_state	*array[1];
 };
 
 #define SI_NUM_STATES (sizeof(union si_state) / sizeof(struct si_pm4_state *))
@@ -190,7 +190,7 @@ union si_state_atoms {
 		struct r600_atom *spi_map;
 		struct r600_atom *scratch_state;
 	} s;
-	struct r600_atom *array[0];
+	struct r600_atom *array[1];
 };
 
 #define SI_NUM_ATOMS (sizeof(union si_state_atoms)/sizeof(struct r600_atom*))
@@ -412,7 +412,11 @@ void si_set_occlusion_query_state(struct si_context *sctx,
 /* si_state_binning.c */
 void si_emit_dpbb_state(struct si_context *sctx, struct r600_atom *state);
 
-/* si_state_shaders.c */
+/* si_state_shader.c */
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 bool si_update_shaders(struct si_context *sctx);
 void si_init_shader_functions(struct si_context *sctx);
 bool si_init_shader_cache(struct si_screen *sscreen);
@@ -422,7 +426,9 @@ void si_get_active_slot_masks(const struct tgsi_shader_info *info,
 			      uint64_t *samplers_and_images);
 void *si_get_blit_vs(struct si_context *sctx, enum blitter_attrib_type type,
 		     unsigned num_layers);
-
+#ifdef __cplusplus
+}
+#endif
 /* si_state_draw.c */
 void si_init_ia_multi_vgt_param_table(struct si_context *sctx);
 void si_emit_cache_flush(struct si_context *sctx);

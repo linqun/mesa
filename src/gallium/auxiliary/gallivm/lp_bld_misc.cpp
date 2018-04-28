@@ -120,11 +120,13 @@ static void init_native_targets()
 {
    // If we have a native target, initialize it to ensure it is linked in and
    // usable by the JIT.
+#ifndef STANDALONE_COMPILER
    llvm::InitializeNativeTarget();
 
    llvm::InitializeNativeTargetAsmPrinter();
 
    llvm::InitializeNativeTargetDisassembler();
+#endif
 #if DEBUG && HAVE_LLVM >= 0x0306
    {
       char *env_llc_options = getenv("GALLIVM_LLC_OPTIONS");

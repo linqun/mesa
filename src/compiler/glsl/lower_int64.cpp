@@ -351,7 +351,7 @@ lower_64bit_visitor::handle_rvalue(ir_rvalue **rvalue)
 
    ir_expression *const ir = (*rvalue)->as_expression();
    assert(ir != NULL);
-
+#ifndef STANDALONE_COMPILER
    switch (ir->operation) {
    case ir_unop_sign:
       if (lowering(SIGN64)) {
@@ -388,4 +388,5 @@ lower_64bit_visitor::handle_rvalue(ir_rvalue **rvalue)
    default:
       break;
    }
+#endif
 }

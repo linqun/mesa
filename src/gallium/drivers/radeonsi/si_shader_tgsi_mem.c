@@ -1890,7 +1890,7 @@ static const struct lp_build_tgsi_action tex_action = {
 void si_shader_context_init_mem(struct si_shader_context *ctx)
 {
 	struct lp_build_tgsi_context *bld_base;
-	struct lp_build_tgsi_action tmpl = {};
+	struct lp_build_tgsi_action tmpl = {INIT_ZERO};
 
 	bld_base = &ctx->bld_base;
 

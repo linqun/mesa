@@ -25,6 +25,7 @@
 
 #include "util/u_math.h"
 #include "util/u_memory.h"
+#include "util/strndup.h"
 
 #include <gelf.h>
 #include <libelf.h>

@@ -113,7 +113,7 @@ static void si_destroy_context(struct pipe_context *context)
 	/* Unreference the framebuffer normally to disable related logic
 	 * properly.
 	 */
-	struct pipe_framebuffer_state fb = {};
+	struct pipe_framebuffer_state fb = {INIT_ZERO};
 	if (context->set_framebuffer_state)
 		context->set_framebuffer_state(context, &fb);
 
@@ -437,7 +437,7 @@ static struct pipe_context *si_create_context(struct pipe_screen *screen,
 					  sizeof(*sctx->border_color_table));
 	if (!sctx->border_color_table)
 		goto fail;
-
+#ifndef STANDALONE_COMPILER
 	sctx->border_color_buffer = (struct r600_resource*)
 		pipe_buffer_create(screen, 0, PIPE_USAGE_DEFAULT,
 				   SI_MAX_BORDER_COLORS *
@@ -450,14 +450,14 @@ static struct pipe_context *si_create_context(struct pipe_screen *screen,
 			       NULL, PIPE_TRANSFER_WRITE);
 	if (!sctx->border_color_map)
 		goto fail;
-
+#endif
 	si_init_all_descriptors(sctx);
 	si_init_fence_functions(sctx);
 	si_init_state_functions(sctx);
 	si_init_shader_functions(sctx);
 	si_init_viewport_functions(sctx);
 	si_init_ia_multi_vgt_param_table(sctx);
-
+#ifndef STANDALONE_COMPILER
 	if (sctx->chip_class >= CIK)
 		cik_init_sdma_functions(sctx);
 	else
@@ -528,7 +528,7 @@ static struct pipe_context *si_create_context(struct pipe_screen *screen,
 				sctx->null_const_buf.buffer->width0, 0,
 				SI_COHERENCY_SHADER);
 	}
-
+#endif
 	uint64_t max_threads_per_block;
 	screen->get_compute_param(screen, PIPE_SHADER_IR_TGSI,
 				  PIPE_COMPUTE_CAP_MAX_THREADS_PER_BLOCK,

@@ -254,7 +254,7 @@ inline bool exec_node::is_head_sentinel() const
 }
 #endif
 
-#ifdef __cplusplus
+#ifndef __cplusplus
 /* This macro will not work correctly if `t' uses virtual inheritance.  If you
  * are using virtual inheritance, you deserve a slow and painful death.  Enjoy!
  */

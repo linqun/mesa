@@ -1873,7 +1873,6 @@ merge_tess_info(struct shader_info *tes_info,
 	tes_info->tess.point_mode |= tcs_info->tess.point_mode;
 }
 
-static
 void radv_create_shaders(struct radv_pipeline *pipeline,
                          struct radv_device *device,
                          struct radv_pipeline_cache *cache,

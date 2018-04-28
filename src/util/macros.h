@@ -295,4 +295,16 @@ do {                       \
 #define EXPLICIT_CONVERSION
 #endif
 
+#if defined(_WIN32) && defined(STANDALONE_COMPILER)
+#define INIT_ZERO 0
+#define pthread_mutex_init(a, b)
+#define pthread_mutex_destroy(a)
+#define pthread_mutex_lock(a)
+#define pthread_mutex_unlock(a)
+#define sysconf(a)  4
+#define open_memstream(a, b) NULL
+#else
+#define INIT_ZERO
+#endif
+
 #endif /* UTIL_MACROS_H */

@@ -781,7 +781,7 @@ static void create_function(struct radv_shader_context *ctx,
 {
 	uint8_t user_sgpr_idx;
 	struct user_sgpr_info user_sgpr_info;
-	struct arg_info args = {};
+	struct arg_info args = {INIT_ZERO};
 	LLVMValueRef desc_sets;
 	bool needs_view_index = needs_view_index_sgpr(ctx, stage);
 	allocate_user_sgprs(ctx, stage, has_previous_stage,
@@ -2205,7 +2205,7 @@ handle_vs_outputs_post(struct radv_shader_context *ctx,
 	uint32_t param_count = 0;
 	unsigned target;
 	unsigned pos_idx, num_pos_exports = 0;
-	struct ac_export_args args, pos_args[4] = {};
+	struct ac_export_args args, pos_args[4] = {INIT_ZERO};
 	LLVMValueRef psize_value = NULL, layer_value = NULL, viewport_index_value = NULL;
 	int i;
 

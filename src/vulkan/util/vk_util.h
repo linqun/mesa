@@ -127,7 +127,7 @@ __vk_outarray_next(struct __vk_outarray *a, size_t elem_size)
       return NULL;
 
    if (a->data != NULL)
-      p = a->data + (*a->filled_len) * elem_size;
+      p = (char*)a->data + (*a->filled_len) * elem_size;
 
    *a->filled_len += 1;
 
