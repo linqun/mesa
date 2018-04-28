@@ -1,0 +1,616 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{65FE9EB0-0AFF-44BE-BE3F-4741580D0D0D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>compiler</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);E:\other-git\radeoncompiler\llvm\include;E:\other-git\radeoncompiler\llvm\build\include</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\..\..\..\llvm_amd_common\include;..\..\..\..\llvm_amd_common\build\include</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_USE_MATH_DEFINES=1;HAVE_LLVM=0x400; %(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./glsl;./nir;../../../src/compiler;../../../src/compiler/glsl;../../../src/compiler/nir;../../../src;../../../src/mesa;../../../include;../../../src/mapi;../../../src/gallium/include;../../../src/gallium/auxiliary;../../../src/getopt;../../../src/compiler/glsl/glcpp;./glsl/glcpp;../../../src/gallium/drivers</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4819;4291</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>E:\other-git\radeoncompiler\llvm\build\Debug\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;LLVMCore.lib%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_MSC_VER=1913;DEBUG;_DEBUG;_CONSOLE;_USE_MATH_DEFINES=1;HAVE_LLVM=0x0500;MESA_LLVM_VERSION_PATCH=0;__LIBELF_INTERNAL__;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS=1;STANDALONE_COMPILER=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../../src/compiler;../../../src/compiler/glsl;../../../src/compiler/nir;../../../src/util;../../../src;../../../src/mesa;../../../include;../../../src/mapi;../../../src/gallium/include;../../../src/gallium/auxiliary;../../../src/getopt;../../../src/compiler/glsl/glcpp;../../../src/gallium/drivers;../../../../libelf/lib;../../../src/amd/common;../../../src/mesa/main;../../../src/amd/vulkan;.;../../../src/vulkan/wsi;../../../src/vulkan/util</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4819;4291;4244;4267;4018;4996;4146;4133;4305;4715;4624</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\..\..\llvm_amd_common\build\Debug\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;LLVMCore.lib;LLVMExecutionEngine.lib;LLVMInterpreter.lib;LLVMMC.lib;LLVMMCJIT.lib;LLVMSupport.lib;LLVMRuntimeDyld.lib;LLVMObject.lib;LLVMMCDisassembler.lib;LLVMAsmPrinter.lib;LLVMMCParser.lib;LLVMDebugInfoCodeView.lib;LLVMSelectionDAG.lib;LLVMCodeGen.lib;LLVMTarget.lib;LLVMBitReader.lib;LLVMBitWriter.lib;LLVMInstrumentation.lib;LLVMScalarOpts.lib;LLVMInstCombine.lib;LLVMTransformUtils.lib;LLVMAnalysis.lib;LLVMProfileData.lib;psapi.lib;LLVMAMDGPUCodeGen.lib;LLVMAMDGPUAsmParser.lib;LLVMAMDGPUAsmPrinter.lib;LLVMipo.lib;LLVMAMDGPUUtils.lib;LLVMVectorize.lib;LLVMAMDGPUInfo.lib;LLVMAMDGPUDesc.lib;LLVMIRReader.lib;LLVMLinker.lib;LLVMAsmParser.lib;LLVMDemangle.lib;LLVMGlobalISel.lib;LLVMBinaryFormat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\libelf\lib\byteswap.h" />
+    <ClInclude Include="..\..\..\..\libelf\lib\config.h" />
+    <ClInclude Include="..\..\..\..\libelf\lib\elf_repl.h" />
+    <ClInclude Include="..\..\..\..\libelf\lib\errors.h" />
+    <ClInclude Include="..\..\..\..\libelf\lib\ext_types.h" />
+    <ClInclude Include="..\..\..\..\libelf\lib\gelf.h" />
+    <ClInclude Include="..\..\..\..\libelf\lib\libelf.h" />
+    <ClInclude Include="..\..\..\..\libelf\lib\nlist.h" />
+    <ClInclude Include="..\..\..\..\libelf\lib\private.h" />
+    <ClInclude Include="..\..\..\..\libelf\lib\sys_elf.h" />
+    <ClInclude Include="..\..\..\..\libelf\lib\verdef.h" />
+    <ClInclude Include="..\..\..\..\libelf\lib\verneed.h" />
+    <ClInclude Include="..\..\..\src\compiler\builtin_type_macros.h" />
+    <ClInclude Include="..\..\..\src\compiler\glsl_types.h" />
+    <ClInclude Include="..\..\..\src\compiler\nir\nir.h" />
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_array.h" />
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_builder.h" />
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_builder_opcodes.h" />
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_constant_expressions.h" />
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_control_flow.h" />
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_control_flow_private.h" />
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_instr_set.h" />
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_intrinsics.h" />
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_opcodes.h" />
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_phi_builder.h" />
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_search.h" />
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_search_helpers.h" />
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_vla.h" />
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_worklist.h" />
+    <ClInclude Include="..\..\..\src\compiler\nir_types.h" />
+    <ClInclude Include="..\..\..\src\compiler\shader_enums.h" />
+    <ClInclude Include="..\..\..\src\compiler\spirv\GLSL.std.450.h" />
+    <ClInclude Include="..\..\..\src\compiler\spirv\nir_spirv.h" />
+    <ClInclude Include="..\..\..\src\compiler\spirv\spirv.h" />
+    <ClInclude Include="..\..\..\src\compiler\spirv\spirv_info.h" />
+    <ClInclude Include="..\..\..\src\compiler\spirv\vtn_private.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_arit.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_arit_overflow.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_assert.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_bitarit.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_const.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_conv.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_debug.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_flow.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_gather.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_init.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_intr.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_limits.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_logic.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_misc.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_pack.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_printf.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_quad.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_sample.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_sample_aos.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_struct.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_swizzle.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi_action.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_type.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_aa_point.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_build.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_dump.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_emulate.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_exec.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_info.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_iterate.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_lowering.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_opcode_tmp.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_parse.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_point_sprite.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_sanity.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_scan.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_strings.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_text.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_transform.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_two_side.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_ureg.h" />
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_util.h" />
+    <ClInclude Include="..\..\..\src\mesa\main\errors.h" />
+    <ClInclude Include="..\..\..\src\mesa\main\mtypes.h" />
+    <ClInclude Include="..\..\..\src\util\bitset.h" />
+    <ClInclude Include="..\..\..\src\util\crc32.h" />
+    <ClInclude Include="..\..\..\src\util\debug.h" />
+    <ClInclude Include="..\..\..\src\util\format_srgb.h" />
+    <ClInclude Include="..\..\..\src\util\half_float.h" />
+    <ClInclude Include="..\..\..\src\util\hash_table.h" />
+    <ClInclude Include="..\..\..\src\util\list.h" />
+    <ClInclude Include="..\..\..\src\util\macros.h" />
+    <ClInclude Include="..\..\..\src\util\mesa-sha1.h" />
+    <ClInclude Include="..\..\..\src\util\ralloc.h" />
+    <ClInclude Include="..\..\..\src\util\register_allocate.h" />
+    <ClInclude Include="..\..\..\src\util\rgtc.h" />
+    <ClInclude Include="..\..\..\src\util\rounding.h" />
+    <ClInclude Include="..\..\..\src\util\set.h" />
+    <ClInclude Include="..\..\..\src\util\sha1\sha1.h" />
+    <ClInclude Include="..\..\..\src\util\simple_list.h" />
+    <ClInclude Include="..\..\..\src\util\slab.h" />
+    <ClInclude Include="..\..\..\src\util\strndup.h" />
+    <ClInclude Include="..\..\..\src\util\strtod.h" />
+    <ClInclude Include="..\..\..\src\util\texcompress_rgtc_tmp.h" />
+    <ClInclude Include="..\..\..\src\util\u_atomic.h" />
+    <ClInclude Include="..\..\..\src\util\u_vector.h" />
+    <ClInclude Include="compiler_option.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\libelf\lib\32.fsize.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\32.getehdr.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\32.getphdr.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\32.getshdr.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\32.newehdr.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\32.newphdr.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\32.xlatetof.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\64.xlatetof.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\assert.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\begin.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\checksum.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\cntl.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\cook.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\data.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\end.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\errmsg.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\errno.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\fill.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\flag.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\gelfehdr.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\gelfphdr.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\gelfshdr.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\gelftrans.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\getarhdr.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\getarsym.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\getbase.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\getdata.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\getident.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\getscn.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\hash.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\input.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\kind.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\memset.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\ndxscn.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\newdata.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\newscn.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\next.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\nextscn.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\nlist.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\opt.delscn.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\rand.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\rawdata.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\rawfile.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\strptr.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\swap64.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\update.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\verdef_32_tof.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\verdef_32_tom.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\verdef_64_tof.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\verdef_64_tom.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\version.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\x.elfext.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\x.movscn.c" />
+    <ClCompile Include="..\..\..\..\libelf\lib\x.remscn.c" />
+    <ClCompile Include="..\..\..\src\amd\common\ac_binary.c" />
+    <ClCompile Include="..\..\..\src\amd\common\ac_llvm_build.c" />
+    <ClCompile Include="..\..\..\src\amd\common\ac_llvm_helper.cpp" />
+    <ClCompile Include="..\..\..\src\amd\common\ac_llvm_util.c" />
+    <ClCompile Include="..\..\..\src\amd\common\ac_nir_to_llvm.c" />
+    <ClCompile Include="..\..\..\src\amd\common\ac_shader_util.c" />
+    <ClCompile Include="..\..\..\src\amd\vulkan\radv_nir_to_llvm.c" />
+    <ClCompile Include="..\..\..\src\amd\vulkan\radv_pipeline.c" />
+    <ClCompile Include="..\..\..\src\amd\vulkan\radv_pipeline_cache.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\amd\vulkan\radv_shader.c" />
+    <ClCompile Include="..\..\..\src\amd\vulkan\radv_shader_info.c" />
+    <ClCompile Include="..\..\..\src\compiler\blob.c" />
+    <ClCompile Include="..\..\..\src\compiler\glsl_types.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_clone.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_constant_expressions.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_control_flow.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_dominance.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_from_ssa.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_gather_info.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_gs_count_vertices.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_inline_functions.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_instr_set.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_intrinsics.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_linking_helpers.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_liveness.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_loop_analyze.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_64bit_packing.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_alpha_test.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_alu_to_scalar.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_atomics.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_atomics_to_ssbo.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_bitmap.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_clamp_color_outputs.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_clip.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_clip_cull_distance_arrays.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_constant_initializers.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_double_ops.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_drawpixels.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_global_vars_to_local.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_gs_intrinsics.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_idiv.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_indirect_derefs.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_int64.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_io.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_io_arrays_to_elements.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_io_to_scalar.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_io_to_temporaries.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_io_types.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_load_const_to_scalar.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_locals_to_regs.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_passthrough_edgeflags.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_patch_vertices.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_phis_to_scalar.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_regs_to_ssa.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_returns.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_samplers.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_samplers_as_deref.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_subgroups.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_system_values.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_tex.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_to_source_mods.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_two_sided_color.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_vars_to_ssa.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_var_copies.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_vec_to_movs.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_wpos_center.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_wpos_ytransform.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_metadata.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_move_vec_src_uses_to_dest.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_normalize_cubemap_coords.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opcodes.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_algebraic.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_conditional_discard.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_constant_folding.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_copy_propagate.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_copy_prop_vars.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_cse.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_dce.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_dead_cf.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_gcm.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_global_to_local.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_if.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_intrinsics.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_loop_unroll.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_move_comparisons.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_move_load_ubo.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_peephole_select.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_remove_phis.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_shrink_load.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_trivial_continues.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_undef.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_phi_builder.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_print.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_propagate_invariant.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_remove_dead_variables.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_repair_ssa.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_search.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_serialize.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_split_var_copies.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_sweep.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_to_lcssa.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_to_ssa.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_validate.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_worklist.c" />
+    <ClCompile Include="..\..\..\src\compiler\nir_types.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\shader_enums.c" />
+    <ClCompile Include="..\..\..\src\compiler\spirv\main.c" />
+    <ClCompile Include="..\..\..\src\compiler\spirv\spirv_info.c" />
+    <ClCompile Include="..\..\..\src\compiler\spirv\spirv_to_nir.c" />
+    <ClCompile Include="..\..\..\src\compiler\spirv\vtn_alu.c" />
+    <ClCompile Include="..\..\..\src\compiler\spirv\vtn_amd.c" />
+    <ClCompile Include="..\..\..\src\compiler\spirv\vtn_cfg.c" />
+    <ClCompile Include="..\..\..\src\compiler\spirv\vtn_gather_types.c" />
+    <ClCompile Include="..\..\..\src\compiler\spirv\vtn_glsl450.c" />
+    <ClCompile Include="..\..\..\src\compiler\spirv\vtn_subgroup.c" />
+    <ClCompile Include="..\..\..\src\compiler\spirv\vtn_variables.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_arit.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_arit_overflow.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_assert.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_bitarit.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_const.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_conv.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_debug.cpp" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_flow.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_aos.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_aos_array.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_cached.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_float.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_soa.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_srgb.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_yuv.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_gather.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_init.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_intr.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_logic.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_misc.cpp" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_pack.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_printf.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_quad.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_sample.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_sample_aos.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_sample_soa.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_struct.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_swizzle.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi_action.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi_aos.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi_info.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi_soa.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_type.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_aa_point.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_build.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_dump.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_emulate.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_exec.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_info.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_iterate.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_lowering.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_parse.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_point_sprite.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_sanity.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_scan.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_strings.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_text.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_transform.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_two_side.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_ureg.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_util.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\util\u_bitmask.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\util\u_cpu_detect.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\util\u_dummy.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\util\u_format.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\util\u_math.c" />
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\util\u_transfer.c" />
+    <ClCompile Include="..\..\..\src\getopt\getopt_long.c" />
+    <ClCompile Include="..\..\..\src\mesa\main\extensions_table.c" />
+    <ClCompile Include="..\..\..\src\mesa\main\imports.c" />
+    <ClCompile Include="..\..\..\src\util\bitscan.c" />
+    <ClCompile Include="..\..\..\src\util\crc32.c" />
+    <ClCompile Include="..\..\..\src\util\debug.c" />
+    <ClCompile Include="..\..\..\src\util\half_float.c" />
+    <ClCompile Include="..\..\..\src\util\hash_table.c" />
+    <ClCompile Include="..\..\..\src\util\mesa-sha1.c" />
+    <ClCompile Include="..\..\..\src\util\ralloc.c" />
+    <ClCompile Include="..\..\..\src\util\register_allocate.c" />
+    <ClCompile Include="..\..\..\src\util\rgtc.c" />
+    <ClCompile Include="..\..\..\src\util\set.c" />
+    <ClCompile Include="..\..\..\src\util\sha1\sha1.c" />
+    <ClCompile Include="..\..\..\src\util\slab.c" />
+    <ClCompile Include="..\..\..\src\util\string_buffer.c" />
+    <ClCompile Include="..\..\..\src\util\strtod.c" />
+    <ClCompile Include="..\..\..\src\util\u_queue.c" />
+    <ClCompile Include="..\..\..\src\util\u_vector.c" />
+    <ClCompile Include="compiler_option.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\src\compiler\glsl\ir_expression_operation.py">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Python27\python.exe %(FullPath) enum &gt;%(RelativeDir)/ir_expression_operation.h
+C:\Python27\python.exe %(FullPath) constant &gt;%(RelativeDir)/ir_expression_operation_constant.h
+C:\Python27\python.exe %(FullPath) strings &gt;%(RelativeDir)/ir_expression_operation_strings.h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ir_expression_operation.h</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\compiler\nir\nir_intrinsics_c.py">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Python27\python.exe %(FullPath)  --outdir %(RelativeDir)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nir_intrinsics.c</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\compiler\nir\nir_intrinsics_h.py">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Python27\python.exe %(FullPath) --outdir %(RelativeDir)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nir_intrinsics.h</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\amd\vulkan\radv_entrypoints_gen.py">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Python27\python.exe %(FullPath) --xml %(RelativeDir)..\..\vulkan\registry\vk.xml --outdir %(RelativeDir)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">radv_entrypoints.c</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\amd\vulkan\radv_extensions.py">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Python27\python.exe %(FullPath) --xml %(RelativeDir)..\..\vulkan\registry\vk.xml --out-c %(RelativeDir)\radv_extensions.c --out-h %(RelativeDir)\radv_extensions.h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">radv_extensions.c</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\amd\vulkan\vk_format_parse.py">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\amd\vulkan\vk_format_table.py">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Python27\python.exe %(FullPath) %(RelativeDir)vk_format_layout.csv &gt; %(RelativeDir)vk_format_table.c</Command>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <None Include="..\..\..\src\compiler\nir\nir_opcodes.py">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </None>
+    <CustomBuild Include="..\..\..\src\compiler\nir\nir_opcodes_c.py">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Python27\python.exe %(FullPath) &gt;%(RelativeDir)/nir_opcodes.c</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nir_opcodes.c</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\compiler\nir\nir_opcodes_h.py">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Python27\python.exe %(FullPath) &gt;%(RelativeDir)/nir_opcodes.h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nir_opcodes.h</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\compiler\nir\nir_opt_algebraic.py">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Python27\python.exe %(FullPath) &gt;%(RelativeDir)/nir_opt_algebraic.c</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nir_opt_algebraic.c</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\compiler\nir\nir_constant_expressions.py">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Python27\python.exe %(FullPath) &gt;%(RelativeDir)/nir_constant_expressions.c</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nir_constant_expressions.c</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\compiler\nir\nir_builder_opcodes_h.py">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Python27\python.exe %(FullPath) &gt;%(RelativeDir)/nir_builder_opcodes.h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nir_builder_opcodes.h</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\compiler\spirv\spirv_info_c.py">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Python27\python.exe %(FullPath) %(RelativeDir)/spirv.core.grammar.json %(RelativeDir)/spirv_info.c</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">spirv_info.c</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\compiler\spirv\vtn_gather_types_c.py">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Python27\python.exe %(FullPath) %(RelativeDir)/spirv.core.grammar.json %(RelativeDir)/vtn_gather_types.c</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">vtn_gather_types.c</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

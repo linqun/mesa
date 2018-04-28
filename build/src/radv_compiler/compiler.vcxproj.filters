@@ -1,0 +1,1199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="build">
+      <UniqueIdentifier>{a519072b-caf4-4561-a3bc-fc0a9effc22c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="build\nir">
+      <UniqueIdentifier>{a6baf97c-6494-4f3d-b38a-679315543731}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libelf">
+      <UniqueIdentifier>{a5a534f2-a0f3-42ca-b504-928064c29396}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{0ee87e61-ec48-4c2c-a4bd-503f36ecae72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\amd">
+      <UniqueIdentifier>{0ce4ab9b-1d79-4c6b-b9c8-411bce4e0da7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\amd\vulkan">
+      <UniqueIdentifier>{1ea23b7c-6855-460e-8297-cbd1b48809d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\amd\common">
+      <UniqueIdentifier>{e271f881-601f-4c6e-a02b-c2a3f75f49d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\util">
+      <UniqueIdentifier>{69f8a3fc-857a-4c85-b5c2-dc4ce222565f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\mesa">
+      <UniqueIdentifier>{eabfeef3-36cc-4f9e-8ee0-ac0162586a7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\mesa\main">
+      <UniqueIdentifier>{62c5f2f7-b00d-476d-a27e-da07a2a5e5b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="compiler">
+      <UniqueIdentifier>{cd31a39f-ccc1-4993-a098-d12268e1d5c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="compiler\spirv">
+      <UniqueIdentifier>{7fe39ad6-f703-4d6f-8c4c-1bd2058b8fa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="compiler\nir">
+      <UniqueIdentifier>{abac85b2-ad40-4cad-b12e-0b7abac82811}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="compiler\nir\gen">
+      <UniqueIdentifier>{034baf11-6b97-4564-9c3d-3ab532c9463a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gallium">
+      <UniqueIdentifier>{d9a5cd55-eb14-4e42-bf59-7204d67ea5eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gallium\drivers">
+      <UniqueIdentifier>{ee381f10-bac8-412f-872d-1bd948dcae2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gallium\drivers\radeonsi">
+      <UniqueIdentifier>{a0adec18-932e-4539-8dab-9d68e7506295}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gallium\drivers\radeon">
+      <UniqueIdentifier>{0eefe7f1-ba43-4311-ac45-9c72064f5be8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gallium\auxiliary">
+      <UniqueIdentifier>{a3206a4d-ff9b-4c48-94f0-f9bf08066cdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gallium\auxiliary\gallivm">
+      <UniqueIdentifier>{156ef1eb-2de4-4578-988f-4f5ea7b8eba6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\getopt">
+      <UniqueIdentifier>{4d53cd57-b30f-4b52-a57f-e925ad93839d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\compiler\builtin_type_macros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\glsl_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\nir_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\shader_enums.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\nir\nir.h">
+      <Filter>compiler\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_array.h">
+      <Filter>compiler\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_builder.h">
+      <Filter>compiler\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_constant_expressions.h">
+      <Filter>compiler\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_control_flow.h">
+      <Filter>compiler\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_control_flow_private.h">
+      <Filter>compiler\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_instr_set.h">
+      <Filter>compiler\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_intrinsics.h">
+      <Filter>compiler\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_search.h">
+      <Filter>compiler\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_vla.h">
+      <Filter>compiler\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_worklist.h">
+      <Filter>compiler\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\ralloc.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\mesa\main\mtypes.h">
+      <Filter>src\mesa\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\hash_table.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\set.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\bitset.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\debug.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\format_srgb.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\half_float.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\list.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\macros.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\mesa-sha1.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\register_allocate.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\rgtc.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\rounding.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\simple_list.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\strndup.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\strtod.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\texcompress_rgtc_tmp.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\u_atomic.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\mesa\main\errors.h">
+      <Filter>src\mesa\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_gather.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_aa_point.h">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_build.h">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_dump.h">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_emulate.h">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_exec.h">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_info.h">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_iterate.h">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_lowering.h">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_opcode_tmp.h">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_parse.h">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_point_sprite.h">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_sanity.h">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_scan.h">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_strings.h">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_text.h">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_transform.h">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_two_side.h">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_ureg.h">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_util.h">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_arit.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_arit_overflow.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_assert.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_bitarit.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_const.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_conv.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_debug.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_flow.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_init.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_intr.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_limits.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_logic.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_misc.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_pack.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_printf.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_quad.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_sample.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_sample_aos.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_struct.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_swizzle.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi_action.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_type.h">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libelf\lib\byteswap.h">
+      <Filter>libelf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libelf\lib\config.h">
+      <Filter>libelf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libelf\lib\elf_repl.h">
+      <Filter>libelf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libelf\lib\errors.h">
+      <Filter>libelf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libelf\lib\ext_types.h">
+      <Filter>libelf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libelf\lib\gelf.h">
+      <Filter>libelf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libelf\lib\libelf.h">
+      <Filter>libelf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libelf\lib\nlist.h">
+      <Filter>libelf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libelf\lib\private.h">
+      <Filter>libelf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libelf\lib\sys_elf.h">
+      <Filter>libelf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libelf\lib\verdef.h">
+      <Filter>libelf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\libelf\lib\verneed.h">
+      <Filter>libelf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_builder_opcodes.h">
+      <Filter>build\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_opcodes.h">
+      <Filter>build\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_phi_builder.h">
+      <Filter>compiler\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\nir\nir_search_helpers.h">
+      <Filter>compiler\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\slab.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\spirv\GLSL.std.450.h">
+      <Filter>compiler\spirv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\spirv\nir_spirv.h">
+      <Filter>compiler\spirv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\spirv\spirv.h">
+      <Filter>compiler\spirv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\spirv\spirv_info.h">
+      <Filter>compiler\spirv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\compiler\spirv\vtn_private.h">
+      <Filter>compiler\spirv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\sha1\sha1.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\crc32.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\util\u_vector.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="compiler_option.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_clone.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_control_flow.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_dominance.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_from_ssa.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_gs_count_vertices.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_instr_set.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_intrinsics.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_liveness.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_alu_to_scalar.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_atomics.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_clip.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_global_vars_to_local.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_gs_intrinsics.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_idiv.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_io.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_load_const_to_scalar.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_locals_to_regs.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_phis_to_scalar.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_samplers.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_system_values.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_tex.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_to_source_mods.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_two_sided_color.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_var_copies.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_vars_to_ssa.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_vec_to_movs.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_metadata.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_move_vec_src_uses_to_dest.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_normalize_cubemap_coords.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_constant_folding.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_copy_propagate.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_cse.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_dce.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_dead_cf.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_gcm.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_global_to_local.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_peephole_select.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_remove_phis.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_undef.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_print.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_remove_dead_variables.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_search.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_split_var_copies.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_sweep.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_to_ssa.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_validate.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_worklist.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\util\ralloc.c">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\util\hash_table.c">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\util\set.c">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\util\debug.c">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\util\half_float.c">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\util\mesa-sha1.c">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\util\register_allocate.c">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\util\rgtc.c">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\util\strtod.c">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\mesa\main\imports.c">
+      <Filter>src\mesa\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_gather.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_misc.cpp">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_arit.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_flow.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_type.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_const.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_intr.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_logic.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_pack.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_bitarit.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\util\u_cpu_detect.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_util.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_aa_point.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_build.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_dump.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_emulate.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_exec.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_info.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_iterate.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_lowering.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_parse.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_point_sprite.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_sanity.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_scan.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_strings.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_text.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_transform.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_two_side.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_ureg.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi_action.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\util\u_dummy.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_conv.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\util\u_math.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_printf.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_float.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\util\u_bitmask.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi_aos.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi_info.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi_soa.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_swizzle.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_quad.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_arit_overflow.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_assert.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_debug.cpp">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_aos.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_aos_array.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_cached.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_soa.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_srgb.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_yuv.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_init.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_sample.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_sample_aos.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_sample_soa.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_struct.c">
+      <Filter>src\gallium\auxiliary\gallivm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\util\u_format.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\32.fsize.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\32.getehdr.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\32.getphdr.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\32.getshdr.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\32.newehdr.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\32.newphdr.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\32.xlatetof.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\64.xlatetof.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\assert.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\begin.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\checksum.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\cntl.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\cook.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\data.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\end.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\errmsg.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\errno.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\fill.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\flag.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\gelfehdr.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\gelfphdr.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\gelfshdr.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\gelftrans.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\getarhdr.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\getarsym.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\getbase.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\getdata.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\getident.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\getscn.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\hash.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\input.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\kind.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\memset.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\ndxscn.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\newdata.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\newscn.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\next.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\nextscn.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\nlist.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\opt.delscn.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\rand.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\rawdata.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\rawfile.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\strptr.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\swap64.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\update.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\verdef_32_tof.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\verdef_32_tom.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\verdef_64_tof.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\verdef_64_tom.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\version.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\x.elfext.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\x.movscn.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\libelf\lib\x.remscn.c">
+      <Filter>libelf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_constant_expressions.c">
+      <Filter>build\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opcodes.c">
+      <Filter>build\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_algebraic.c">
+      <Filter>build\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_gather_info.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_inline_functions.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_bitmap.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_clamp_color_outputs.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_double_ops.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_drawpixels.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_indirect_derefs.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_io_to_scalar.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_io_to_temporaries.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_io_types.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_passthrough_edgeflags.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_returns.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_wpos_center.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_wpos_ytransform.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_phi_builder.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_propagate_invariant.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_repair_ssa.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\mesa\main\extensions_table.c">
+      <Filter>src\mesa\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\util\slab.c">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gallium\auxiliary\util\u_transfer.c">
+      <Filter>src\gallium\auxiliary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\spirv\spirv_info.c">
+      <Filter>compiler\spirv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\spirv\spirv_to_nir.c">
+      <Filter>compiler\spirv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\spirv\vtn_alu.c">
+      <Filter>compiler\spirv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\spirv\vtn_cfg.c">
+      <Filter>compiler\spirv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\spirv\vtn_glsl450.c">
+      <Filter>compiler\spirv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\spirv\vtn_variables.c">
+      <Filter>compiler\spirv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\amd\vulkan\radv_pipeline.c">
+      <Filter>src\amd\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\amd\common\ac_binary.c">
+      <Filter>src\amd\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\amd\common\ac_llvm_helper.cpp">
+      <Filter>src\amd\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\amd\common\ac_llvm_util.c">
+      <Filter>src\amd\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\amd\common\ac_nir_to_llvm.c">
+      <Filter>src\amd\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\amd\common\ac_llvm_build.c">
+      <Filter>src\amd\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_constant_initializers.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_conditional_discard.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\util\sha1\sha1.c">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\util\crc32.c">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_loop_analyze.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_clip_cull_distance_arrays.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_patch_vertices.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_regs_to_ssa.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_if.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_loop_unroll.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_trivial_continues.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_to_lcssa.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir_types.cpp">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\getopt\getopt_long.c">
+      <Filter>src\getopt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\glsl_types.cpp">
+      <Filter>compiler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\shader_enums.c">
+      <Filter>compiler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_64bit_packing.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\amd\common\ac_shader_util.c">
+      <Filter>src\amd\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\amd\vulkan\radv_pipeline_cache.c">
+      <Filter>src\amd\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\amd\vulkan\radv_shader.c">
+      <Filter>src\amd\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_serialize.c">
+      <Filter>compiler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_linking_helpers.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_alpha_test.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_atomics_to_ssbo.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_int64.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_io_arrays_to_elements.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_samplers_as_deref.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_lower_subgroups.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_copy_prop_vars.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_intrinsics.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_move_comparisons.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_shrink_load.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\blob.c">
+      <Filter>compiler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\util\string_buffer.c">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\spirv\vtn_gather_types.c">
+      <Filter>compiler\spirv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\amd\vulkan\radv_nir_to_llvm.c">
+      <Filter>src\amd\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\nir\nir_opt_move_load_ubo.c">
+      <Filter>compiler\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\util\u_vector.c">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\spirv\vtn_subgroup.c">
+      <Filter>compiler\spirv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\spirv\vtn_amd.c">
+      <Filter>compiler\spirv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\amd\vulkan\radv_shader_info.c">
+      <Filter>src\amd\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\util\bitscan.c">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\util\u_queue.c">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\compiler\spirv\main.c" />
+    <ClCompile Include="compiler_option.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\src\compiler\nir\nir_opcodes.py">
+      <Filter>compiler\nir\gen</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\src\compiler\nir\nir_constant_expressions.py">
+      <Filter>compiler\nir\gen</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\compiler\nir\nir_opcodes_c.py">
+      <Filter>compiler\nir\gen</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\compiler\nir\nir_opcodes_h.py">
+      <Filter>compiler\nir\gen</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\compiler\nir\nir_opt_algebraic.py">
+      <Filter>compiler\nir\gen</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\compiler\nir\nir_builder_opcodes_h.py">
+      <Filter>compiler\nir\gen</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\compiler\glsl\ir_expression_operation.py">
+      <Filter>compiler\nir\gen</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\compiler\spirv\spirv_info_c.py">
+      <Filter>compiler\spirv</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\compiler\spirv\vtn_gather_types_c.py">
+      <Filter>compiler\spirv</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\compiler\nir\nir_intrinsics_c.py">
+      <Filter>compiler\nir\gen</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\compiler\nir\nir_intrinsics_h.py">
+      <Filter>compiler\nir\gen</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\amd\vulkan\radv_extensions.py">
+      <Filter>src\amd\vulkan</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\amd\vulkan\radv_entrypoints_gen.py">
+      <Filter>src\amd\vulkan</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\amd\vulkan\vk_format_parse.py">
+      <Filter>src\amd\vulkan</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\amd\vulkan\vk_format_table.py">
+      <Filter>src\amd\vulkan</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>
