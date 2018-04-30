@@ -22,7 +22,7 @@
     <ProjectGuid>{65FE9EB0-0AFF-44BE-BE3F-4741580D0D0D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>compiler</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -106,7 +106,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_MSC_VER=1913;DEBUG;_DEBUG;_CONSOLE;_USE_MATH_DEFINES=1;HAVE_LLVM=0x0500;MESA_LLVM_VERSION_PATCH=0;__LIBELF_INTERNAL__;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS=1;STANDALONE_COMPILER=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_MSC_VER=1913;DEBUG;_DEBUG;_CONSOLE;_USE_MATH_DEFINES=1;HAVE_LLVM=0x0700;MESA_LLVM_VERSION_PATCH=0;__LIBELF_INTERNAL__;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS=1;STANDALONE_COMPILER=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>../../../src/compiler;../../../src/compiler/glsl;../../../src/compiler/nir;../../../src/util;../../../src;../../../src/mesa;../../../include;../../../src/mapi;../../../src/gallium/include;../../../src/gallium/auxiliary;../../../src/getopt;../../../src/compiler/glsl/glcpp;../../../src/gallium/drivers;../../../../libelf/lib;../../../src/amd/common;../../../src/mesa/main;../../../src/amd/vulkan;.;../../../src/vulkan/wsi;../../../src/vulkan/util</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4819;4291;4244;4267;4018;4996;4146;4133;4305;4715;4624</DisableSpecificWarnings>
     </ClCompile>
@@ -114,7 +114,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\..\..\..\llvm_amd_common\build\Debug\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;LLVMCore.lib;LLVMExecutionEngine.lib;LLVMInterpreter.lib;LLVMMC.lib;LLVMMCJIT.lib;LLVMSupport.lib;LLVMRuntimeDyld.lib;LLVMObject.lib;LLVMMCDisassembler.lib;LLVMAsmPrinter.lib;LLVMMCParser.lib;LLVMDebugInfoCodeView.lib;LLVMSelectionDAG.lib;LLVMCodeGen.lib;LLVMTarget.lib;LLVMBitReader.lib;LLVMBitWriter.lib;LLVMInstrumentation.lib;LLVMScalarOpts.lib;LLVMInstCombine.lib;LLVMTransformUtils.lib;LLVMAnalysis.lib;LLVMProfileData.lib;psapi.lib;LLVMAMDGPUCodeGen.lib;LLVMAMDGPUAsmParser.lib;LLVMAMDGPUAsmPrinter.lib;LLVMipo.lib;LLVMAMDGPUUtils.lib;LLVMVectorize.lib;LLVMAMDGPUInfo.lib;LLVMAMDGPUDesc.lib;LLVMIRReader.lib;LLVMLinker.lib;LLVMAsmParser.lib;LLVMDemangle.lib;LLVMGlobalISel.lib;LLVMBinaryFormat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;LLVMCore.lib;LLVMExecutionEngine.lib;LLVMInterpreter.lib;LLVMMC.lib;LLVMMCJIT.lib;LLVMSupport.lib;LLVMRuntimeDyld.lib;LLVMObject.lib;LLVMMCDisassembler.lib;LLVMAsmPrinter.lib;LLVMMCParser.lib;LLVMDebugInfoCodeView.lib;LLVMSelectionDAG.lib;LLVMCodeGen.lib;LLVMTarget.lib;LLVMBitReader.lib;LLVMBitWriter.lib;LLVMInstrumentation.lib;LLVMScalarOpts.lib;LLVMInstCombine.lib;LLVMTransformUtils.lib;LLVMAnalysis.lib;LLVMProfileData.lib;psapi.lib;LLVMAMDGPUCodeGen.lib;LLVMAMDGPUAsmParser.lib;LLVMAMDGPUAsmPrinter.lib;LLVMipo.lib;LLVMAMDGPUUtils.lib;LLVMVectorize.lib;LLVMAMDGPUInfo.lib;LLVMAMDGPUDesc.lib;LLVMIRReader.lib;LLVMLinker.lib;LLVMAsmParser.lib;LLVMDemangle.lib;LLVMGlobalISel.lib;LLVMBinaryFormat.lib;LLVMAggressiveInstCombine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -188,51 +188,6 @@
     <ClInclude Include="..\..\..\src\compiler\spirv\spirv.h" />
     <ClInclude Include="..\..\..\src\compiler\spirv\spirv_info.h" />
     <ClInclude Include="..\..\..\src\compiler\spirv\vtn_private.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_arit.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_arit_overflow.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_assert.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_bitarit.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_const.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_conv.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_debug.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_flow.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_gather.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_init.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_intr.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_limits.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_logic.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_misc.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_pack.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_printf.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_quad.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_sample.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_sample_aos.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_struct.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_swizzle.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi_action.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_type.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_aa_point.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_build.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_dump.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_emulate.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_exec.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_info.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_iterate.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_lowering.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_opcode_tmp.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_parse.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_point_sprite.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_sanity.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_scan.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_strings.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_text.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_transform.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_two_side.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_ureg.h" />
-    <ClInclude Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_util.h" />
     <ClInclude Include="..\..\..\src\mesa\main\errors.h" />
     <ClInclude Include="..\..\..\src\mesa\main\mtypes.h" />
     <ClInclude Include="..\..\..\src\util\bitset.h" />
@@ -439,67 +394,7 @@
     <ClCompile Include="..\..\..\src\compiler\spirv\vtn_glsl450.c" />
     <ClCompile Include="..\..\..\src\compiler\spirv\vtn_subgroup.c" />
     <ClCompile Include="..\..\..\src\compiler\spirv\vtn_variables.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_arit.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_arit_overflow.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_assert.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_bitarit.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_const.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_conv.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_debug.cpp" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_flow.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_aos.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_aos_array.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_cached.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_float.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_soa.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_srgb.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_format_yuv.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_gather.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_init.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_intr.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_logic.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_misc.cpp" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_pack.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_printf.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_quad.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_sample.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_sample_aos.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_sample_soa.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_struct.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_swizzle.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi_action.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi_aos.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi_info.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_tgsi_soa.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\gallivm\lp_bld_type.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_aa_point.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_build.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_dump.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_emulate.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_exec.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_info.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_iterate.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_lowering.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_parse.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_point_sprite.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_sanity.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_scan.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_strings.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_text.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_transform.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_two_side.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_ureg.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\tgsi\tgsi_util.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\util\u_bitmask.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\util\u_cpu_detect.c" />
     <ClCompile Include="..\..\..\src\gallium\auxiliary\util\u_dummy.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\util\u_format.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\util\u_math.c" />
-    <ClCompile Include="..\..\..\src\gallium\auxiliary\util\u_transfer.c" />
     <ClCompile Include="..\..\..\src\getopt\getopt_long.c" />
     <ClCompile Include="..\..\..\src\mesa\main\extensions_table.c" />
     <ClCompile Include="..\..\..\src\mesa\main\imports.c" />
@@ -544,7 +439,7 @@ C:\Python27\python.exe %(FullPath) strings &gt;%(RelativeDir)/ir_expression_oper
     </CustomBuild>
     <CustomBuild Include="..\..\..\src\amd\vulkan\radv_entrypoints_gen.py">
       <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Python27\python.exe %(FullPath) --xml %(RelativeDir)..\..\vulkan\registry\vk.xml --outdir %(RelativeDir)</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">radv_entrypoints.c</Outputs>
     </CustomBuild>
@@ -552,7 +447,7 @@ C:\Python27\python.exe %(FullPath) strings &gt;%(RelativeDir)/ir_expression_oper
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Python27\python.exe %(FullPath) --xml %(RelativeDir)..\..\vulkan\registry\vk.xml --out-c %(RelativeDir)\radv_extensions.c --out-h %(RelativeDir)\radv_extensions.h</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">radv_extensions.c</Outputs>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </CustomBuild>
     <CustomBuild Include="..\..\..\src\amd\vulkan\vk_format_parse.py">
       <FileType>Document</FileType>

@@ -1,12 +1,7 @@
 #include <getopt.h>
-#include "pipe\p_context.h"
-#include "pipe\p_screen.h"
+#include <vulkan/vulkan.h>
 #include "radv_private.h"
 #include "radv_shader.h"
-#include <llvm-c/Core.h>
-#include <llvm-c/TargetMachine.h>
-#include "util/hash_table.h"
-#include <vulkan/vulkan.h>
 #include "compiler_option.h"
 
 const struct radv_dynamic_state default_dynamic_state;
@@ -19,9 +14,7 @@ struct radv_instance g_instance = { 0 };
 struct radv_pipeline g_pipeline = { 0 };
 struct radv_device g_device = { 0 };
 
-
-
-int main(int argc, char * const* argv)
+int main(int argc, char* const* argv)
 {
     uint32_t stageMask = 0;
     Init();
