@@ -1,0 +1,21 @@
+
+offline_compiler = executable(
+  'offline_compiler',
+  ['../compiler/glsl/ir_builder_print_visitor.cpp',
+  '../compiler/glsl/ir_builder_print_visitor.h',
+  '../compiler/glsl/opt_add_neg_to_sub.h',
+  '../compiler/glsl/standalone_scaffolding.cpp',
+  '../compiler/glsl/standalone_scaffolding.h',
+  'offline_standalone.cpp',
+  'offline_standalone.h',
+  'offline_si.c',
+  'offline_si.h',
+  'offline.cpp'],
+  c_args : [c_vis_args, c_msvc_compat_args, no_override_init_args],
+  cpp_args : [cpp_vis_args, cpp_msvc_compat_args],
+  include_directories : [inc_common, '../compiler', '../compiler/glsl', '../gallium/include', '../gallium/drivers', '../amd/common', '../amd/llvm'],
+  link_with : [libglsl, libglsl_util, libradeonsi, libamd_common_llvm, libgallium, libamdgpuwinsys, libradeonwinsys, libgalliumvl, _libxmlconfig],
+  dependencies : [dep_llvm, idep_nir, idep_mesautil, idep_getopt],
+  build_by_default : with_tools.contains('glsl'),
+  install : with_tools.contains('glsl'),
+)

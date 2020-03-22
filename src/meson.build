@@ -112,6 +112,8 @@ if with_gallium
   endif
 endif
 
+  subdir('offline')
+
 # This must be after at least mesa, glx, and gallium, since libgl will be
 # defined in one of those subdirs depending on the glx provider.
 if with_glx != 'disabled' and not with_glvnd
